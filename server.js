@@ -3,14 +3,14 @@ const app = express()
 const PORT = 3001
 const fs = require('fs')
 
-// adding connection to MongoDB and Heroku
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/MYSQL',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    },
-  );
+// adding connection to MongoDB and Heroku (for future reference)
+// mongoose.connect(
+//     process.env.MONGODB_URI || 'mongodb://localhost:27017/MYSQL',
+//     {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     },
+//   );
 // need to add routes to be able to connect them to the server.js
 const htmlRoute = require('./routes/htmlRoute')
 const noteRoutes = require ('./routes/noteRoute')
