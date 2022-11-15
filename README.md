@@ -1,10 +1,8 @@
 # <Note Taker>
 
 ## Description
-
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
  
- This is a repo to showcase a website that allows for note taking through a very easy using user interface as well as straight forward usage. The motivation of the creation of this was to allow for a place to write quick notes that will allow thoughts and tasks to be saved in a communal area for the user. The probelms this solves is that you're able to keep track of all things you've added or had in your mind and pushing them into a detailed and safe place to allow your thoughts to roam free and have more free space to think more rather than trying to keep remembering. I learnt how to use routes and how to add them into the JS to make a usable page and to allow for troubleshooting of code. 
+This is a repo to showcase a website that allows for note taking through a very easy using user interface as well as straight forward usage. The motivation of the creation of this was to allow for a place to write quick notes that will allow thoughts and tasks to be saved in a communal area for the user. The probelms this solves is that you're able to keep track of all things you've added or had in your mind and pushing them into a detailed and safe place to allow your thoughts to roam free and have more free space to think more rather than trying to keep remembering. I learnt how to use routes and how to add them into the JS to make a usable page and to allow for troubleshooting of code. 
 
 ## Installation
 
