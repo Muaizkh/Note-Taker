@@ -1,7 +1,8 @@
 const $noteTitle = $('.note-title')
 const $noteText = $('.note-textarea')
 const $newNoteBtn = $('.new-note')
-const $noteList = $('.list-container .list-group');
+const $noteList = $('.list-container .list-group')
+const $saveNoteBtn = $('.note-title .note-textarea .new-note');
 
 
 // activeNote is used to keep track of the note in the textarea
@@ -19,7 +20,7 @@ const getNotes = () => {
 const saveNote = note => {
   return $.ajax ({
     url: '/api/notes',
-    date: note,
+    date: none,
     method: 'POST'
   })
 }
@@ -110,12 +111,12 @@ const renderNoteList =  notes => {
   const noteListItems = [];
 // Should return jquery object for li with text and delete button unless wDeleteButton argument is provided as a false
  
-  const create$li = (text, wDeleteButton = true) => {
+  const create$li = (text, wDeleteBtn = true) => {
     const $li = $("<li class = 'list-group-item'>")
     const $span = $("<span>").text(text)
     $li.append($span)
 
-    if (wDeleteButton) {
+    if (wDeleteBtn) {
       const $delBtn = $(
         "<i class= 'fas fa-trash-alt float-right text-danger delete-note'>")
 
