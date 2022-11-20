@@ -34,8 +34,9 @@ noteRoute.post('/notes', (req,res) => {
     const { title, text } =req.body
     console.log(title, text)
 
+    let newNote;
     if (title && text) {
-        const newNote = {
+         newNote = {
             title,
             text,
         }

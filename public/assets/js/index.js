@@ -2,7 +2,7 @@ const $noteTitle = $('.note-title')
 const $noteText = $('.note-textarea')
 const $newNoteBtn = $('.new-note')
 const $noteList = $('.list-container .list-group')
-const $saveNoteBtn = $('.note-title .note-textarea .new-note');
+const $saveNoteBtn = $('.saveNote');
 
 
 // activeNote is used to keep track of the note in the textarea
@@ -11,7 +11,7 @@ let activeNote = {};
 //  creating a function that will allow to get all notes that have been saved
 const getNotes = () => {
   return $.ajax({
-    url: '/api/notes',
+    url: '/notes/notes',
     method: 'GET'
   })
 }
@@ -19,8 +19,8 @@ const getNotes = () => {
 // fixing the function to allow for saving of the note
 const saveNote = note => {
   return $.ajax ({
-    url: '/api/notes',
-    date: none,
+    url: '/notes/notes',
+    data: note,
     method: 'POST'
   })
 }
@@ -28,7 +28,7 @@ const saveNote = note => {
 // function that allows for deleting of saved notes
 const deleteNote = id => {
   return $.ajax ({
-    url: '/api.notes/' + id,
+    url: '/notes/notes/' + id,
     method: 'DELETE'
   })
 }
@@ -44,10 +44,10 @@ const renderActiveNote = () => {
     $noteTitle.value = activeNote.title;
     $noteText.value = activeNote.text;
   } else {
-    $noteTitle.removeAttribute('readonly', false);
-    $noteText.removeAttribute('readonly', false);
-    $noteTitle.value = ('');
-    $noteText.value = ('');
+    // $noteTitle.removeAttribute('readonly', false);
+    // $noteText.removeAttribute('readonly', false);
+    $noteTitle.val('');
+    $noteText.val ('');
   }
 };
 
@@ -97,7 +97,14 @@ const handleNewNoteView = function() {
 };
 
 const handleRenderSaveBtn = function() {
-  if (!noteTitle.val().trim() || !noteText.val().trim()) {
+  // if variable noteTitle has no charactar written
+  // hide the $saveNoteBtn
+
+  const noteTitle = $noteTitle.val();
+
+  const noteText = $noteText.val();
+
+  if (!noteTitle.trim() || !noteText.trim()) {
     $saveNoteBtn.hide()
   } else {
     $saveNoteBtn.show();
@@ -126,12 +133,12 @@ const renderNoteList =  notes => {
     return $li
   };
 
-  if (jsonNotes.length === 0) {
+  if (notes.length === 0) {
     noteListItems.push(create$li('No saved Notes', false));
   }
 
   notes.forEach (note => {
-    const $li = create$li(note.title).data(none)
+    const $li = create$li(note.title)
     noteListItems.push($li)
   })
 
